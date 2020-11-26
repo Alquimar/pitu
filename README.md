@@ -1,4 +1,4 @@
-![](/frontend/src/assets/icone.png=100x100)
+![](/frontend/src/assets/icone.png)
 # Pituu
 A simple micro-SaaS for URL shortening.
 
@@ -8,5 +8,5 @@ A simple micro-SaaS for URL shortening.
 - [x] Aula 3
 - [ ] Solicitar certificado
 
-### PROJETO EM PRODUÇÃO (AWS)
+# LINK DO PROJETO EM PRODUÇÃO (AWS)
 [Pituu](http://www.pituu.tk/)
