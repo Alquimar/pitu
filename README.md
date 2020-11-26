@@ -1,4 +1,4 @@
-![](/frontend/src/assets/icone.png =100x100)
+![](/frontend/src/assets/icone.png)
 # Pituu
 A simple micro-SaaS for URL shortening.
 
