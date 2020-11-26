@@ -1,5 +1,5 @@
-![](/frontend/src/assets/icone.png)
-# pitu
+<img src=”/frontend/src/assets/icone.png” height="50" width="50" />
+# Pituu
 A simple micro-SaaS for URL shortening.
 
 # TASKLISTS
