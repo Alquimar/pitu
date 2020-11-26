@@ -1,4 +1,4 @@
-<img src=”/frontend/src/assets/icone.png” height="50" width="50" />
+![](/frontend/src/assets/icone.png =100x100)
 # Pituu
 A simple micro-SaaS for URL shortening.
 
