@@ -1,0 +1,86 @@
+1) Executar o comando: npx create-react-app frontend (Esse comando vai criar uma aplicação com a estrutura básica do react usando o template create-react-app).
+    Obs: o 'npx' ele executa os pacotes, diferentemente do npm que instala os pacotes.
+
+2) Entrar na pasta 'frontend' e rodar a aplicação através do comando:
+    - yarn start
+
+3) Limpar a pasta do projeto:
+    - Na pasta 'src' do frontend, remover todos os arquivos, exceto 'App.js' e 'index.js'
+
+4) Limpar os arquivos 'App.js' e 'index.js':
+    - Remover as referências/importações de logo, css etc
+
+5) Criar a estrutura de pastas da aplicação, dentro do diretório 'src':
+    - Criar a pasta 'routes' e dentro dela o arquivo 'index.js' (esse arquivo irá conter todas as informações para  controlar o roteamento da aplicação)
+
+Obs: para gerenciar as bibliotecas no NODE utilizar o comando 'npm', já no REACT usar o 'yarn'
+
+    - Instalar biblioteca React Router DOM, através do comando: (responsável pricipalmente por controlar o fluxo de navegação dentro das aplicações react)
+        - yarn add react-router-dom
+    
+    - Criar as pastas 'HomePage', 'RedirectPage', 'StatsPage' e 'NotFoundPage' e dentro de cada uma o seu arquivo 'index.js'
+
+6) Configurar o arquivo de rotas ('index.js' do diretório 'routes'):
+    - Importar o React: import React from 'react';
+
+    - Importar o BrowserRouter, o Switch e o Route, da biblioteca React Router DOM:
+        import {BrowserRouter, Switch, Route} from 'react-router-dom'
+
+    - Criar a função 'Routes', responsável por retornar uma instância do BrowserRouter contendo um Switch, que por usa vez, contém todas as rotas navegáveis da aplicação:
+        - Para cada rota da aplicação, criar uma definição de rota dentro do Switch
+
+    - Exportar a função 'Routes': export default Routes;
+
+7) Definiar as rotas no arquivo 'App.js':
+    - Importar as rotas: import Routes from './routes';
+    - Declarar uma constante do tipo função que retorna 'Routes'
+
+8) Definir o conteúdo dos arquivos 'index.js' respectivos as rotas 'HomePage', 'RedirectPage', 'StatsPage' e 'NotFoundPage'
+
+9) Instalar a biblioteca 'axios' (Responsável pelo controle e realização das requisições que serão fetias ao backend)
+
+9) Criar a pasta 'services' onde estarão os serviços da aplicação, e dentro dela:
+    - Criar o arquivo 'app.js', que contém a instância do axios, e configurá-lo:
+        - Importar o axios: import axios from 'axios'
+
+    - Criar o arquivo 'shortenerService.js' e configurá-lo:
+        - Importar o arquivo 'api.js': import baseAPI from './api';
+
+10) Instalar o Bootstrap e o React Bootstrap, bibliotecas que irão auxiliar na criação dos componentes que serão utilizados nas páginas (Frontend), através do comando:
+    - yarn add react-bootstrap bootstrap (ele instalará as duas bibliotecas)
+
+11) Criar o arquivo 'App.scss' no diretório 'src' e referenciar o bootstrap:
+    - Importar o bootstrap: @import "~bootstrap/scss/bootstrap";
+
+12) Instalar a biblioteca Node Sass (versão 4.14.1) através do comando:
+    - yarn add node-sass@4.14.1
+
+13) Importar o css no arquivo 'index.js' da pasta 'src':
+    - import './App.scss';
+
+14) Instalar a biblioteca Styled Components (Permite criar componentes estilizados e nomeá-los) através do comando:
+    - yarn add styled-components
+
+15) Instalar a biblioteca Font Awesome (Biblioteca de ícones e fontes) através do comando:
+    - yarn add @fontawesome/fontawesome-svg-core @fontawesome/free-solid-svg-icons @fontawesome/react-fontawesome
+
+16) Configurar a biblioteca Font Awesome no arquivo 'index.js' para utilizá-la na aplicação
+
+17) Organizar os componentes:
+    - Criar a pasta 'components' no diretório 'src'
+    - Criar a pasta 'Header' no diretório 'components'
+    - Criar o arquivo 'index.js' (arquivo que irá conter os componentes customizados) no diretório 'Header'
+    - Importar o React no arquivo 'index.js': import React from 'react';
+    - Criar o arquivo 'styles.js' (arquivo que irá conter os estilos que serão utilizados para estilizar os componentes customizados) no diretório 'Header'
+    - Importar o styled-components no arquivo 'styles.js': import styled from 'styled-components';
+
+18) Criar a pasta 'assets' (Irá conter imagens, ícones que serão utilizados) no diretório 'src'
+
+                                                - Desestruturação de componentes -
+
+    - Informo quais os componentes/pacotes que quero importar: import { item1, item2, item3 } from '...'
+
+                                                - Comandos básicos -
+
+    - ../ (Sair da pasta)
+    - ./ (Voltar para raiz da pasa)

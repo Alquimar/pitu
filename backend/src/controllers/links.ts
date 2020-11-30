@@ -18,6 +18,8 @@ async function postLink(req: Request, res: Response) {
     const result = await linksRepository.add(link);
     if(!result.id) return res.sendStatus(400);
 
+    // Como o atributo 'id' é opcional, preciso garantir ao TypeScript que ele sempre terá algum valor
+    // Inserindo uma '!' após o atributo
     link.id = result.id!;
 
     res.status(201).json(link);

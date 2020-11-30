@@ -9,6 +9,8 @@ class HomePage extends React.Component {
     constructor(props) {
         super(props);
 
+        // state é importante para definir quais o parâmetros/atributos
+        // que serão passados na execução da página em questão
         this.state = {
             isLoading: false,
             url: '',
@@ -17,7 +19,9 @@ class HomePage extends React.Component {
         };
     }
 
+    // 
     handleSubmit = async (event) => {
+        // Cancela o evento, para eviar o POST
         event.preventDefault();
 
         const { url } = this.state;
@@ -28,6 +32,7 @@ class HomePage extends React.Component {
             this.setState({ isLoading: false, errorMessage: 'Informe uma url para encurtar.' });
         } else {
             try {
+                // Chamada para o backend
                 const service = new ShortnerService();
                 const result = await service.generate({ url });
 
@@ -38,6 +43,7 @@ class HomePage extends React.Component {
         }
     }
 
+    // Função responsável por copiar o valor do inputURL
     copyToClipboard = () => {
         const element = this.inputURL;
         element.select();
@@ -45,6 +51,7 @@ class HomePage extends React.Component {
     }
 
     render() {
+        // Definir as propriedades do state que serão utilizadar no render
         const { isLoading, errorMessage, code } = this.state;
 
         return (
@@ -56,6 +63,8 @@ class HomePage extends React.Component {
                             <FormControl
                                 placeholder="Digite a url para encurtar"
                                 defaultValue=""
+                                // Setar o valor do input para o state
+                                // toda vez que o valor do input for alterado
                                 onChange={e => this.setState({ url: e.target.value })}
                             />
                             <InputGroup.Append>
@@ -63,6 +72,7 @@ class HomePage extends React.Component {
                             </InputGroup.Append>
                         </InputGroup>
 
+                        {/* Validação */}
                         {isLoading ? (
                             <Spinner animation="border" />
                         ) : (
@@ -72,6 +82,9 @@ class HomePage extends React.Component {
                                             <FormControl
                                                 autoFocus={true}
                                                 defaultValue={vars.HOST_APP + code}
+                                                // Referenciando o componente em questão (input)
+                                                // e atribuindo a uma variável chamada inputURL
+                                                // para poder copiar o seu valor posteriormente
                                                 ref={(input) => this.inputURL = input}
                                             />
                                             <InputGroup.Append>
@@ -82,6 +95,8 @@ class HomePage extends React.Component {
                                     </>
                                 )
                             )}
+                            
+                        {/* Tratamento de erro */}
                         {errorMessage && <Alert variant="danger">{errorMessage}</Alert>}
                     </Form>
                 </ContentContainer>

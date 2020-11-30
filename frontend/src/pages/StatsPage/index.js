@@ -51,6 +51,7 @@ class StatsPage extends React.Component {
         return (
             <Container>
                 <Header>Estatísticas:</Header>
+                {/* Tratamento de erro */}
                 {errorMessage ? (
                     <StatsContainer className="text-center">
                         <FontAwesomeIcon size="3x" color="#f8d7da" icon="exclamation-triangle" />

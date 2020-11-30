@@ -1,0 +1,63 @@
+1) Configuração inicial de um projeto NODE JS através do comando:
+    - npm init -y
+    Obs: o "-y" é um atalho para confirmar todas as etapas de instalação
+
+2) Instalar o Framework Express (necessário para construção de backends) através do comando:
+    - npm install express
+
+3) Instalar o TypeScript (Linguagem baseada em JS utilizada para adicionar tipagem) através do comando:
+    - npm install typescript
+
+4) Instalar os types do Express através do comando:
+    - npm install @types/express
+
+5) Configurar o TypeScript no projeto através do comando:
+    - tsc --init (esse comando cria o arquivo 'tsconfig.json' na pasta que o comando foi executado)
+    - No arquivo 'tsconfig.json' fazer as seguintes configurações:
+        - "target¨: "es5" => "es6" (Versão mais nova do EcmaScript)
+        - Descomentar a linha "outDir" e informar a pasta que contém os arquivos compilados: "./dist"
+        - Descomentar a linha "rootDir" e informar a pasta que contém os arquivos em TypeScript: "./src"
+
+6) Com o backend configurado e pronto, precisamos definir e configurar as Rotas (toda ação que é feita no frontend que precisa de um retorno do backend. São funções/operações que o frontend vai chamar do backend para dar um retorno ao usuário)
+
+    Obs: As rotas tratam a chegada das requisições, enquanto os controllers (onde fica a lógica) as processam e encaminham
+
+7) Após definição e configuração das rotas é preciso compilar os arquivos TypeScript para Javascript, através do comando:
+    - tsc (Vai criar na raiz do backend a pasta 'dist' (que está setada na linha outDist do "package.json")
+
+8) Entrar na pasta "dist" para rodar a aplicação através do comando:
+    - node server.js
+
+    OU Configurar o atalho "npm start" para rodar a aplicação fora da pasta dist:
+        - Entrar no arquivo package.json e dentro de "scripts" adicionar o comando:
+        - "start": "tsc && node ./dist/server.js"s
+
+9) Testar as rotas com o Postman (Através das URLs GET E POST na porta definida no arquivo "server.ts")
+
+10) Criar a pasta "models" dentro de "src" do backend e adicionar as entidades (objetos) dentro dela
+
+11) Instalar a biblioteca sequelize (ORM - Mapeamento de Objeto Relacional) através do comando:
+    - npm install sequelize
+
+12) Instalar os types do validor, que são os types utilizados pela biblioteca sequelize, através do comando:
+    - npm install @types/validator
+
+13) Instalar a biblioteca específica do banco que será utilizado (no caso do projeto: MySql) através do comando
+    - npm innstall mysql12
+
+14) Instalar a biblioteca 'cors' (Para que nosso frontend consiga se comunicar com o backend, pois estão rodando em portas diferentes) através do comando:
+    - npm install cors --save
+
+15) Instalar os types da biblioteca 'cors' através do comando:
+    - npm install @types/cors --save-dev
+
+16) Configurar a biblioteca 'cors' no arquivo 'app.ts':
+    - importar o cors
+    - vincular o cors ao express: app.user(cors());
+
+17) Mudar a porta do backend, do arquivo 'server.ts', para 3001 (pois p front irá rodar na 3000)
+
+                                                - Comandos básicos -
+
+    - ../ (Sair da pasta)
+    - ./ (Voltar para raiz da pasa)
